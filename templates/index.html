@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Promotion App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Qahiri&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/style.css" />
+  </head>
+  <body>
+    <h2>HR Analytics Deployment</h2>
+    <div class="container">
+      <div class="leftContainer">
+        <form action="{{ url_for('predict')}}" method="post">
+          <h3>Enter Employee Details (All Fields are required)</h3>
+          <div class="formWrapper">
+            <div class="leftSection">
+              <div class="radio">
+                <span>KPIs Met > 80% ?</span>
+                <div class="radio-options">
+                  <input
+                    type="radio"
+                    id="KPI_Met_Yes"
+                    name="KPIs_met>80%"
+                    value="1"
+                    required
+                  />
+                  <label for="KPI_Met_Yes">Yes</label>
+
+                  <input
+                    type="radio"
+                    id="KPI_MET_No"
+                    name="KPIs_met>80%"
+                    value="0"
+                  />
+                  <label for="KPI_MET_No">No</label>
+                </div>
+              </div>
+              <div class="radio">
+                <span>Awards Won?</span>
+                <div class="radio-options">
+                  <input
+                    type="radio"
+                    id="Awards_Won_Yes"
+                    name="awards_won?"
+                    value="1"
+                    Yes
+                    required
+                  />
+                  <label for="Awards_Won_Yes">Yes</label>
+                  <input
+                    type="radio"
+                    id="Awards_Won_No"
+                    name="awards_won?"
+                    value="0"
+                  />
+                  <label for="Awards_Won_No">No</label>
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="number"
+                  min="1"
+                  max="10"
+                  placeholder="Enter number of Training"
+                  id="no_of_training"
+                  name="no_of_trainings"
+                  required
+                />
+              </div>
+
+              <div>
+                <select name="department" id="department" required>
+                  <option value="" disabled selected>Select Department</option>
+                  <option value="Sales & Marketing">Sales & Marketing</option>
+                  <option value="Analytics">Analytics</option>
+                  <option value="Operations">Operations</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Procurement">Procurement</option>
+                  <option value="Finance">Finance</option>
+                  <option value="HR">HR</option>
+                  <option value="R&D">R&D</option>
+                  <option value="Legal">Legal</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  min="1"
+                  max="100"
+                  placeholder="Enter Avg Training Score"
+                  id="avg_training_score"
+                  required
+                  name="avg_training_score"
+                />
+              </div>
+            </div>
+            <div class="rightSection">
+              <div>
+                <input
+                  type="number"
+                  min="0"
+                  max="5"
+                  placeholder="Enter Previous Year Rating"
+                  step=".1"
+                  name="previous_year_rating_na"
+                  required
+                />
+              </div>
+              <div>
+                <select name="region" id="region" required>
+                  <option value="" selected disabled>Select Region</option>
+				  <option value="region_1">Region 1</option>
+                  <option value="region_2">Region 2</option>
+				  <option value="region_3">Region 3</option>
+				  <option value="region_4">Region 4</option>
+				  <option value="region_5">Region 5</option>
+				  <option value="region_6">Region 6</option>
+				  <option value="region_7">Region 7</option>
+				  <option value="region_8">Region 8</option>
+				  <option value="region_9">Region 9</option>
+				  <option value="region_10">Region 10</option>
+				  <option value="region_11">Region 11</option>
+				  <option value="region_12">Region 12</option>
+				  <option value="region_13">Region 13</option>
+				  <option value="region_14">Region 14</option>
+				  <option value="region_15">Region 15</option>
+				  <option value="region_16">Region 16</option>
+				  <option value="region_17">Region 17</option>
+				  <option value="region_18">Region 18</option>
+				  <option value="region_19">Region 19</option>
+				  <option value="region_20">Region 20</option>
+				  <option value="region_21">Region 21</option>
+                  <option value="region_22">Region 22</option>
+                  <option value="region_23">Region 23</option>
+				  <option value="region_24">Region 24</option>
+				  <option value="region_25">Region 25</option>
+                  <option value="region_26">Region 26</option>
+				  <option value="region_27">Region 27</option>
+				  <option value="region_28">Region 28</option>
+				  <option value="region_29">Region 29</option>
+				  <option value="region_30">Region 30</option>
+                  <option value="region_31">Region 31</option>
+                  <option value="region_32">Region 32</option>
+                  <option value="region_33">Region 33</option>
+                  <option value="region_34">Region 34</option>
+                </select>
+              </div>
+
+              <div class="radio2">
+                <span class="gender"> Gender</span>
+                <div class="radio-options">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="1"
+                    required
+                  />
+                  <label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="0" />
+                  <label for="female">Female</label>
+                </div>
+              </div>
+
+              <div>
+                <select name="education_NA" id="education" required>
+                  <option value="" selected disabled>Select Education</option>
+                  <option value="Bachelor's">Bachelor's</option>
+                  <option value="Master's & above">Master's & above</option>
+                  <option value="Below Secondary">Below Secondary</option>
+                  <option value="Not Available">Not Available</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  id="service-length"
+                  type="number"
+                  placeholder="Enter Service Length"
+                  min="1"
+                  max="40"
+                  name="length_of_service"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="reset">Clear</button>
+            <button type="submit">Predict</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="rightContainer">
+        <div class="aboutWrapper">
+          <div class="avatarWrapper">
+            <img src="./static/dp.jfif" alt="" class="avatar" />
+            <div>
+              <h4>Shubham Raj</h4>
+              <p>Data Science | Machine learning | Research</p>
+              <div class="iconWrapper">
+                <a target="_blank" href="https://github.com/shubhamraj-git"
+                  ><img src="./static/github.png" alt="" class="icon"
+                /></a>
+                <a target="_blank" href="https://www.linkedin.com/in/shubhamrajofficial/"
+                  ><img src="./static/linkedIn.png" alt="" class="icon"
+                /></a>
+                <a target="_blank" href="mailto:shubhamraj.cs@gmail.com"
+                  ><img src="./static/Gmail.png" alt="" class="icon"
+                /></a>
+              </div>
+            </div>
+          </div>
+
+          <p class="about">
+            This Model predicts whether the employee will get a promotion or
+            not. DataSet used here is from a hackathon named HR Analytics on
+            Analytics vidya
+            <a
+			  target="_blank"
+              href="https://datahack.analyticsvidhya.com/contest/wns-analytics-hackathon-2018-1/"
+              >(Link)</a
+            >.<br /><br />
+            This model has been developed end to end pipeline.<br />
+            Step 1. Loading Dataset<br />
+            Step 2. Pre-Processing data <br />Step 3. Exploratory Data Analysis
+            <a
+			  target="_blank"
+              href=" https://docs.google.com/presentation/d/11lvKshqDvxvtKOgm0kvF3KwB94pgNHW12CUdQV7s1us/edit?usp=drivesdk"
+              >(Link)</a
+            >. <br />Step 4. Feature Engineering<br />
+            Step 5. Feature Selection <br />Step 6. Modeling (Contains
+            HyperParameter Tunning) <br /><br />After comparing models such as
+            Linear Regression, KNN, Decision tree, Random forest classifier,
+            XGBoost, and LightGBM. The algorithm final selected is LightBGM.
+          </p>
+        </div>
+        <div class="resultWrapper">
+          <h3>Result</h3>
+          <p>{{ prediction_text }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
