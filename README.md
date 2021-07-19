@@ -10,5 +10,5 @@ This model has been developed end to end pipeline.<br>
 :dart: Step 5. Feature Selection<br>
 :dart: Step 6. Modeling (Contains HyperParameter Tunning) <br><br>
 
-After comparing models such as Linear Regression, KNN, Decision tree, Random forest classifier,XGBoost, and LightGBM. The final algorithm selected is LightBGM.
+After comparing models such as Logistic Regression, KNN, Decision tree, Random forest classifier,XGBoost, and LightGBM. The final algorithm selected is LightBGM.
 
