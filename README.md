@@ -1,4 +1,4 @@
-# HR Analytics Deployement 
+# HR Analytics Deployment 
 This Model predicts whether the employee will get a promotion or not. :trophy: <br>
 DataSet used here is from a hackathon named HR Analytics on Analytics vidya (https://datahack.analyticsvidhya.com/contest/wns-analytics-hackathon-2018-1/). <br><br>
 Project URL: https://hr-analytics-deployement.herokuapp.com/ <br><br>
